@@ -2,13 +2,13 @@ module UsersHelper
 	def action_button(user)
 		case current_user.friendship_status(user) 
 		when "friends"
-			"Remove friendship"
+			link_to "Cancel Friendship", friendship_path(current_user.friendship_relation(user)), method: :delete
 		when "pending"
-			"Cancel request"
+			link_to "Cancel Request", friendship_path(current_user.friendship_relation(user)), method: :delete
 		when "requested"
-			"Accept or Deny"
+			link_to "Accept", accept_friendship_path(current_user.friendship_relation(user)), method: :put
 		when "not_friends"
-			"Added as a friend"			
+			link_to "Added as a friend", friendships_path(user_id: user.id), method: :post			
 		end
 	end
 end
