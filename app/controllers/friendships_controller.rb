@@ -26,8 +26,8 @@ class FriendshipsController < ApplicationController
 		end
 	end
 
+	
 	private
-
 
 
 	def set_user

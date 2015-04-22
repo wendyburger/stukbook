@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
   			return "friends"
   		else
   			if friendship.first.user == self
-  				return "pendding"
+  				return "pending"
   			else
   				return "requested"
   			end
