@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
 	validates_presence_of :user_id
 	validates_presence_of :content
 
-	auto_html_for content do
+		auto_html_for :content do
 		html_escape
 		image
 		youtube(width: "100%", height: 250, autoplay: false)
